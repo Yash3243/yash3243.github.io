@@ -1,0 +1,190 @@
+/* Contact Page overrides */
+body.contact-page {
+    background-color: var(--color-bg-white);
+}
+
+.contact-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 48px;
+    min-height: auto;
+}
+
+.contact-left {
+    flex: 1;
+}
+
+.contact-heading {
+    font-family: var(--font-heading);
+    font-size: 208px;
+    line-height: 0.85;
+    letter-spacing: -2.08px;
+    color: var(--color-text-black);
+}
+
+.contact-heading span {
+    color: var(--color-accent-pink);
+}
+
+.contact-tagline {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-text-medium);
+    margin-top: 24px;
+    max-width: 85%;
+    line-height: 1.5;
+}
+
+.contact-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.contact-info-block h3 {
+    font-family: var(--font-heading);
+    font-size: 34px;
+    color: var(--color-text-black);
+    margin-bottom: 12px;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 48px;
+    max-width: 500px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-black);
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 2px solid #E5E5E5;
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-text-black);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+    color: #B0B0B0;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-bottom: 2px solid var(--color-text-black);
+}
+
+.submit-btn {
+    align-self: flex-start;
+    background-color: var(--color-text-black);
+    color: var(--color-bg-white);
+    padding: 16px 32px;
+    border: none;
+    border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Yellow Project Banner */
+.yellow-project-banner {
+    background-color: #ffde00; /* bright yellow */
+    width: 100%;
+    padding: 48px max(5vw, 24px); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* or flex-start if we want them aligned to top */
+    box-sizing: border-box;
+}
+
+.yellow-project-banner h2 {
+    font-family: var(--font-heading);
+    font-size: 40px;
+    color: #0d0d0d;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.yellow-project-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* right align */
+    align-items: center;
+    gap: 40px; /* Wider gap for horizontal links */
+}
+
+.yellow-project-link {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    color: #0d0d0d;
+    text-decoration: none;
+    border-bottom: 4px solid #0d0d0d; /* Thick black underline */
+    padding-bottom: 4px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.yellow-project-link:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+    .yellow-project-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        padding: 48px max(5vw, 24px);
+    }
+    .yellow-project-banner h2 {
+        font-size: 32px;
+    }
+    .yellow-project-links {
+        justify-content: flex-start; /* left align on tablet/mobile */
+        gap: 24px;
+    }
+    .yellow-project-link {
+        font-size: 24px;
+    }
+}
+@media (max-width: 600px) {
+    .yellow-project-banner h2 {
+        font-size: 24px;
+    }
+    .yellow-project-link {
+        font-size: 16px;
+        border-bottom: 2px solid #0d0d0d;
+    }
+}

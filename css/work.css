@@ -1,0 +1,314 @@
+/* Work Page */
+
+.work-page {
+    background-color: var(--color-bg-warm);
+}
+
+.work-main {
+    padding: 0;
+}
+
+.work-header {
+    padding: 64px 48px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--color-text-black);
+}
+
+.work-header h1 {
+    font-family: var(--font-heading);
+    font-size: 208px;
+    line-height: 0.85;
+    letter-spacing: -2.08px;
+    color: var(--color-accent-pink);
+    margin: 0;
+}
+
+.work-header h1 span {
+    color: var(--color-accent-pink);
+}
+
+.work-header p {
+    font-size: 24px;
+    align-self: flex-end;
+    margin-bottom: 30px;
+    max-width: 400px;
+    margin-right: 80px; /* Moves it bit more to the left */
+}
+
+.work-section {
+    border-bottom: 2px solid var(--color-text-black);
+    padding: 64px 48px;
+}
+
+.section-title h2 {
+    font-family: var(--font-heading);
+    font-size: 80px;
+    color: var(--color-text-black);
+    margin-bottom: 16px;
+    color: var(--color-accent-pink);
+}
+
+.section-title p {
+    font-size: 18px;
+    margin-bottom: 48px;
+}
+
+.project-block {
+    margin-top: 48px;
+}
+
+.project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.project-header h3 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+}
+
+.role-tag {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-accent-pink);
+}
+
+.role-desc {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+.project-tags .pill {
+    border: 1px solid var(--color-text-light);
+    color: var(--color-text-medium);
+    font-size: 11px;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Instagram Embed Replica UI */
+.ig-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #DBDBDB;
+    border-radius: 6px;
+    overflow: hidden;
+    color: #262626;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ig-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);    
+}
+.ig-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid #EFEFEF;
+}
+.ig-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ig-avatar {
+    width: 32px;
+    height: 32px;
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    color: var(--color-primary-yellow);
+    font-size: 14px;
+}
+.ig-user-info {
+    display: flex;
+    flex-direction: column;
+}
+.ig-username {
+    font-size: 13px;
+    font-weight: 600;
+    color: #262626;
+}
+.ig-audio {
+    font-size: 11px;
+    color: #8E8E8E;
+}
+.ig-view-btn {
+    background: #0095f6;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+.ig-media {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: linear-gradient(145deg, #1A1A1A, #444);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 16px;
+    overflow: hidden;
+}
+.ig-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.9);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    z-index: 2;
+    padding-left: 4px;
+}
+.ig-overlay-text {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    height: 100%;
+    width: 100%;
+}
+.ig-hashtag {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    margin-bottom: auto;
+    margin-top: 8px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+.ig-hashtag span {
+    color: var(--color-primary-yellow);
+}
+.ig-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+.ig-desc {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-primary-yellow);
+    line-height: 1.2;
+    margin-bottom: 24px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+.ig-powered {
+    margin-top: auto;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.ig-powered span {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    display: block;
+    margin-top: 4px;
+}
+.ig-footer {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.ig-view-more {
+    color: #0095f6;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.ig-actions {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: #262626;
+}
+.ig-action-left {
+    display: flex;
+    gap: 16px;
+    font-weight: 300;
+}
+.ig-comment {
+    font-size: 12px;
+    color: #8E8E8E;
+    margin-top: 4px;
+}
+
+.section-title-small {
+    margin-bottom: 48px;
+}
+
+.small-tag {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+.small-tag.pink { color: var(--color-accent-pink); }
+.small-tag.blue { color: var(--color-accent-blue); }
+.small-tag.red { color: #E83B9C; } /* Used pinkish red from image */
+
+.section-title-small h2 {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: var(--color-accent-pink);
+}
+
+.section-title-small p {
+    font-size: 18px;
+    margin-bottom: 24px;
+    max-width: 600px;
+}
+
+.view-link {
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 16px;
+    margin-right: 16px;
+    color: var(--color-accent-blue);
+}
+
+.full-img-placeholder {
+    width: 100%;
+    height: 600px;
+    background-color: #EEE;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+}
