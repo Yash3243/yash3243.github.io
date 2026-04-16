@@ -575,3 +575,200 @@
     max-height: 80%;
     object-fit: contain;
 }
+
+/* ==========================================
+   RESPONSIVE — Homepage
+   ========================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 60px 24px;
+        min-height: auto;
+    }
+    .hero-name {
+        font-size: 120px;
+    }
+    .hero-tagline, .hero-tagline-sub {
+        font-size: 24px;
+    }
+    .hero-right {
+        margin-right: 0;
+    }
+    .hero-right img {
+        max-height: 480px;
+    }
+    .about-left h2 {
+        font-size: 100px;
+    }
+    .about-left h2 .indent-text {
+        margin-left: 40px;
+    }
+    .about-right {
+        font-size: 18px;
+        padding: 60px 5%;
+    }
+    .peek-header h2 {
+        font-size: 48px;
+    }
+    .peek-work {
+        padding: 32px 24px;
+    }
+    .skills-section h2 {
+        font-size: 72px;
+    }
+    .brands-section h2 {
+        font-size: 56px;
+        padding: 0 24px;
+    }
+    .brand-box {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 16px;
+        min-height: auto;
+    }
+    .hero-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .hero-left {
+        max-width: 100%;
+    }
+    .hero-name {
+        font-size: 72px;
+        letter-spacing: -1px;
+    }
+    .hero-tagline, .hero-tagline-sub {
+        font-size: 20px;
+    }
+    .hero-right {
+        max-width: 100%;
+        margin-right: 0;
+        justify-content: center;
+    }
+    .hero-right img {
+        max-height: 400px;
+        width: 100%;
+    }
+    .bubble {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+    .bubble-1 {
+        top: 10px;
+        left: 0;
+    }
+    .bubble-2 {
+        bottom: 20px;
+        right: 0;
+    }
+    .hero-shape-1 {
+        width: 240px;
+        height: 240px;
+        right: -120px;
+        border-radius: 120px;
+    }
+    .hero-shape-2 {
+        width: 150px;
+        height: 150px;
+        bottom: -75px;
+        left: -75px;
+        border-radius: 75px;
+    }
+
+    /* About */
+    .about-section {
+        flex-direction: column;
+    }
+    .about-left {
+        flex: none;
+        padding: 48px 24px;
+        border-right: none;
+        border-bottom: 2px solid var(--color-text-black);
+    }
+    .about-left h2 {
+        font-size: 72px;
+    }
+    .about-left h2 .indent-text {
+        margin-left: 32px;
+    }
+    .about-right {
+        font-size: 16px;
+        padding: 32px 24px;
+    }
+
+    /* Peek Work */
+    .peek-work {
+        padding: 24px 16px;
+    }
+    .peek-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .peek-header h2 {
+        font-size: 36px;
+    }
+    .peek-grid {
+        grid-template-columns: 1fr;
+    }
+    .peek-card h3 {
+        font-size: 20px;
+    }
+
+    /* Skills */
+    .skills-section {
+        padding: 48px 16px;
+    }
+    .skills-section h2 {
+        font-size: 48px;
+        margin-bottom: 32px;
+    }
+
+    /* Brands */
+    .brands-section h2 {
+        font-size: 40px;
+        padding: 0 16px;
+    }
+    .brand-box {
+        width: 100px;
+        height: 100px;
+    }
+    .marquee-set {
+        gap: 16px;
+        padding-right: 16px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: 56px;
+    }
+    .hero-tagline, .hero-tagline-sub {
+        font-size: 16px;
+    }
+    .hero-tag {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    .hero-btn {
+        font-size: 11px;
+        padding: 10px 18px;
+    }
+    .about-left h2 {
+        font-size: 56px;
+    }
+    .skills-section h2 {
+        font-size: 36px;
+    }
+    .brands-section h2 {
+        font-size: 32px;
+    }
+}

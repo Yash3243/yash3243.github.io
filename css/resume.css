@@ -313,44 +313,156 @@
 }
 
 /* ==========================================
-   Responsive
+   Responsive — Resume
    ========================================== */
-@media (max-width: 992px) {
+
+/* Tablet */
+@media (max-width: 1024px) {
     .resume-hero {
-        padding: 140px 24px 60px;
+        padding: 120px 24px 60px;
+    }
+    .resume-hero-content {
+        gap: 48px;
+    }
+    .resume-hero-text h1 {
+        font-size: 90px;
+    }
+    .resume-hero-photo img {
+        width: 280px;
+        height: 350px;
+    }
+    .resume-hero-role {
+        font-size: 24px;
+    }
+    .resume-hero-about {
+        font-size: 15px;
+    }
+    .resume-body {
+        grid-template-columns: 1fr 280px;
+        padding: 60px 24px 40px;
+    }
+    .resume-col-left {
+        padding-right: 40px;
+    }
+    .resume-col-right {
+        padding-left: 40px;
+    }
+    .resume-timeline-item,
+    .resume-edu-item {
+        grid-template-columns: 100px 16px 1fr;
+        gap: 0 16px;
+        margin-bottom: 48px;
+    }
+    .resume-timeline-role {
+        font-size: 19px;
+    }
+    .resume-timeline-desc {
+        font-size: 14px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .resume-hero {
+        padding: 100px 16px 48px;
     }
     .resume-hero-content {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
     }
     .resume-hero-text h1 {
-        font-size: 72px;
+        font-size: 64px;
+        letter-spacing: -2px;
     }
     .resume-hero-photo img {
-        width: 260px;
-        height: 320px;
+        width: 220px;
+        height: 280px;
+    }
+    .resume-hero-role {
+        font-size: 20px;
+    }
+    .resume-hero-about {
+        font-size: 14px;
+        max-width: 100%;
     }
     .resume-body {
         grid-template-columns: 1fr;
-        padding: 60px 24px;
-        gap: 60px;
+        padding: 40px 16px 32px;
+        gap: 48px;
     }
     .resume-col-left {
         padding-right: 0;
         border-right: none;
         border-bottom: 1px solid rgba(0,0,0,0.12);
-        padding-bottom: 60px;
+        padding-bottom: 48px;
+        margin-bottom: 0;
     }
     .resume-col-right {
         padding-left: 0;
     }
     .resume-timeline-item,
     .resume-edu-item {
-        grid-template-columns: 100px 16px 1fr;
-        gap: 0 14px;
+        grid-template-columns: 70px 16px 1fr;
+        gap: 0 12px;
+        margin-bottom: 40px;
     }
     .resume-timeline-date {
         font-size: 12px;
+    }
+    .resume-timeline-role {
+        font-size: 18px;
+    }
+    .resume-timeline-desc {
+        font-size: 14px;
+    }
+    .resume-section-title,
+    .resume-right-section-title {
+        font-size: 13px;
+        letter-spacing: 3px;
+        margin-bottom: 32px;
+    }
+    .resume-skill-group-title {
+        font-size: 14px;
+    }
+    .resume-skill-items {
+        font-size: 13px;
+    }
+    .resume-edu-degree {
+        font-size: 17px;
+    }
+    .resume-edu-school {
+        font-size: 13px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .resume-hero-text h1 {
+        font-size: 48px;
+    }
+    .resume-hero-role {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+    .resume-hero-photo img {
+        width: 180px;
+        height: 230px;
+    }
+    .resume-timeline-item,
+    .resume-edu-item {
+        grid-template-columns: 56px 14px 1fr;
+        gap: 0 8px;
+    }
+    .resume-timeline-role {
+        font-size: 16px;
+    }
+    .resume-timeline-company {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+    .resume-timeline-desc {
+        font-size: 13px;
     }
 }

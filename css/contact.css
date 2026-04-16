@@ -188,3 +188,63 @@ body.contact-page {
         border-bottom: 2px solid #0d0d0d;
     }
 }
+
+/* ==========================================
+   RESPONSIVE — Contact Page
+   ========================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .contact-main {
+        padding: 60px 24px;
+    }
+    .contact-heading {
+        font-size: 120px;
+    }
+    .contact-tagline {
+        font-size: 17px;
+    }
+    .contact-info-block h3 {
+        font-size: 28px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contact-main {
+        flex-direction: column;
+        padding: 40px 16px;
+        gap: 40px;
+    }
+    .contact-heading {
+        font-size: 72px;
+    }
+    .contact-tagline {
+        font-size: 15px;
+        max-width: 100%;
+    }
+    .contact-right {
+        gap: 32px;
+    }
+    .contact-form {
+        max-width: 100%;
+        gap: 28px;
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+    .contact-info-block h3 {
+        font-size: 24px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .contact-heading {
+        font-size: 56px;
+    }
+    .contact-tagline {
+        font-size: 14px;
+    }
+}

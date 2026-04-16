@@ -312,3 +312,110 @@
     background-size: cover;
     background-position: center;
 }
+
+/* ==========================================
+   RESPONSIVE — Work Page
+   ========================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .work-header {
+        padding: 48px 24px;
+    }
+    .work-header h1 {
+        font-size: 120px;
+    }
+    .work-header p {
+        font-size: 18px;
+        margin-right: 0;
+    }
+    .work-section {
+        padding: 48px 24px;
+    }
+    .section-title h2 {
+        font-size: 56px;
+    }
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    .full-img-placeholder {
+        height: 400px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .work-header {
+        flex-direction: column;
+        padding: 32px 16px;
+        gap: 16px;
+    }
+    .work-header h1 {
+        font-size: 72px;
+    }
+    .work-header p {
+        font-size: 16px;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .work-section {
+        padding: 32px 16px;
+    }
+    .section-title h2 {
+        font-size: 40px;
+    }
+    .section-title p {
+        font-size: 15px;
+    }
+    .section-title-small h2 {
+        font-size: 36px;
+    }
+    .section-title-small p {
+        font-size: 15px;
+    }
+    .project-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .project-header h3 {
+        font-size: 24px;
+    }
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .ig-hashtag {
+        font-size: 16px;
+    }
+    .ig-title {
+        font-size: 22px;
+    }
+    .ig-desc {
+        font-size: 14px;
+    }
+    .full-img-placeholder {
+        height: 280px;
+    }
+    .project-tags {
+        flex-wrap: wrap;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .work-header h1 {
+        font-size: 56px;
+    }
+    .instagram-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .section-title h2 {
+        font-size: 32px;
+    }
+    .full-img-placeholder {
+        height: 220px;
+    }
+}

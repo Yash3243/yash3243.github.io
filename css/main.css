@@ -224,3 +224,82 @@ footer {
 .pill.orange { background-color: #FF6B00; }
 .pill.blue-light { background-color: var(--color-light-blue); color: var(--color-text-black); }
 .pill.red { background-color: #FD0505; }
+
+/* ==========================================
+   RESPONSIVE — Global
+   ========================================== */
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    #cursor-dot, #cursor-aura { display: none !important; }
+    *, html, body, a, button, .peek-card, .menu-btn, .view-link {
+        cursor: auto !important;
+    }
+}
+
+/* Tablet — 768px–1024px */
+@media (max-width: 1024px) {
+    #nav {
+        padding: 16px 24px;
+    }
+    .nav-logo {
+        width: 48px;
+        height: 38px;
+        font-size: 24px;
+    }
+    .nav-links a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    footer {
+        padding: 0 24px;
+        height: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    body {
+        padding-top: 70px;
+    }
+}
+
+/* Mobile — below 768px */
+@media (max-width: 768px) {
+    #nav {
+        padding: 12px 16px;
+    }
+    .nav-logo {
+        width: 42px;
+        height: 34px;
+        font-size: 22px;
+    }
+    .nav-links {
+        gap: 4px;
+    }
+    .nav-links a {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    footer {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 24px 16px;
+        gap: 16px;
+        text-align: center;
+    }
+    .footer-col {
+        text-align: center;
+    }
+    .footer-col-label {
+        font-size: 12px;
+    }
+    .footer-col p:not(.footer-col-label), .footer-col-link {
+        font-size: 14px;
+    }
+    body {
+        padding-top: 60px;
+    }
+    .pill {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
