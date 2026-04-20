@@ -279,7 +279,7 @@
 }
 .small-tag.pink { color: var(--color-accent-pink); }
 .small-tag.blue { color: var(--color-accent-blue); }
-.small-tag.red { color: #3BB5E8; } /* Updated to sky blue */
+.small-tag.red { color: #FF6B00; } /* Updated to orange */
 
 .section-title-small h2 {
     font-family: var(--font-heading);
