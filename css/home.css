@@ -86,7 +86,7 @@
 .hero-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px; /* Reduced from 16px as per user feedback */
     margin-bottom: 48px;
 }
 
@@ -520,7 +520,8 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    margin-bottom: 0px; /* Removed bottom margin */
+    margin-bottom: 0px; 
+    padding: 20px 0; /* Add padding to prevent clipping on some devices */
 }
 
 .marquee-track-wrapper {
@@ -661,12 +662,28 @@
         padding: 5px 10px;
     }
     .bubble-1 {
-        top: 10px;
-        left: 0;
+        top: -10px; /* Moved outside image bounds */
+        left: 10px;
+        transform: matrix(1, -0.05, 0.02, 1, 0, 0) rotate(-5deg);
     }
     .bubble-2 {
-        bottom: 20px;
-        right: 0;
+        bottom: -10px; /* Moved outside image bounds */
+        right: 10px;
+        transform: matrix(1, 0.05, -0.03, 1, 0, 0) rotate(5deg);
+    }
+    .hero-pills {
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 32px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .hero-btn {
+        width: 100%;
+        justify-content: center;
     }
     .hero-shape-1 {
         width: 240px;

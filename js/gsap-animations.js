@@ -10,36 +10,71 @@ document.addEventListener('DOMContentLoaded', () => {
  * Reveal animations as user scrolls down the page
  */
 function initScrollReveals() {
-    // Reveal headers and text sections
-    const revealElements = document.querySelectorAll('.hero-name, .hero-tagline, .hero-buttons, .who-content, .brag-box, .peek-card, .section-title, .work-block, .contact-left, .contact-right');
-    
-    revealElements.forEach((el) => {
-        gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-            },
-            y: 40,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out'
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
+        // Desktop Animations
+        const revealElements = document.querySelectorAll('.hero-name, .hero-tagline, .hero-buttons, .who-content, .brag-box, .peek-card, .section-title, .work-block, .contact-left, .contact-right');
+        revealElements.forEach((el) => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                },
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+        });
+
+        const pillContainers = document.querySelectorAll('.hero-pills, .peek-tags, .skill-group');
+        pillContainers.forEach(container => {
+            gsap.from(container.children, {
+                scrollTrigger: {
+                    trigger: container,
+                    start: 'top 90%'
+                },
+                scale: 0.8,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: 'back.out(1.7)'
+            });
         });
     });
 
-    // Special staggered reveal for pills
-    const pillContainers = document.querySelectorAll('.hero-pills, .peek-tags, .skill-group');
-    pillContainers.forEach(container => {
-        gsap.from(container.children, {
-            scrollTrigger: {
-                trigger: container,
-                start: 'top 90%'
-            },
-            scale: 0.8,
-            opacity: 0,
-            duration: 0.5,
-            stagger: 0.1,
-            ease: 'back.out(1.7)'
+    mm.add("(max-width: 768px)", () => {
+        // Mobile Animations - Gentler and slower
+        const revealElements = document.querySelectorAll('.hero-name, .hero-tagline, .hero-buttons, .who-content, .brag-box, .peek-card, .section-title, .work-block, .contact-left, .contact-right');
+        revealElements.forEach((el) => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                },
+                y: 20,
+                opacity: 0,
+                duration: 1.2,
+                ease: 'power2.out'
+            });
+        });
+
+        const pillContainers = document.querySelectorAll('.hero-pills, .peek-tags, .skill-group');
+        pillContainers.forEach(container => {
+            gsap.from(container.children, {
+                scrollTrigger: {
+                    trigger: container,
+                    start: 'top 95%'
+                },
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: 'power2.out'
+            });
         });
     });
 }

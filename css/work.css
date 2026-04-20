@@ -29,11 +29,11 @@
 }
 
 .work-header p {
-    font-size: 24px;
+    font-size: 22px; /* Slightly smaller to fit better */
     align-self: flex-end;
     margin-bottom: 30px;
-    max-width: 400px;
-    margin-right: 80px; /* Moves it bit more to the left */
+    max-width: 800px; /* Increased from 400px to achieve 2 lines */
+    margin-right: 0;
 }
 
 .work-section {
