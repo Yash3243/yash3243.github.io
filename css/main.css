@@ -155,10 +155,11 @@ body.cursor-click #cursor-aura {
     background-color: var(--color-primary-yellow);
     width: 59px;
     height: 46px;
-    font-family: var(--font-heading);
-    font-size: 31px; /* Approximation based on height */
+    font-family: 'Teko', var(--font-heading);
+    font-size: 34px; /* Slightly adjusted for better visual balance in Hindi */
     color: var(--color-text-black);
     line-height: 1;
+    font-weight: 600;
 }
 
 .nav-links {
