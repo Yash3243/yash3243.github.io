@@ -1,13 +1,16 @@
 /* Contact Page overrides */
 body.contact-page {
     background-color: var(--color-bg-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 80px 48px;
+    padding: 40px 48px;
     min-height: auto;
 }
 
@@ -124,14 +127,15 @@ body.contact-page {
     width: 100%;
     padding: 48px max(5vw, 24px); 
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* or flex-start if we want them aligned to top */
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
+    flex-grow: 1;
 }
 
 .yellow-project-banner h2 {
     font-family: var(--font-heading);
-    font-size: 40px;
+    font-size: 96px;
     color: #0d0d0d;
     margin: 0;
     text-transform: uppercase;

@@ -14,9 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         
-        // Dot follows instantly
-        dot.style.left = `${mouseX}px`;
-        dot.style.top = `${mouseY}px`;
+        // Dot follows instantly with transform for smooth performance
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
     });
 
     // Animation loop for Aura (Inertia effect)
@@ -25,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         auraX += (mouseX - auraX) * lerpFactor;
         auraY += (mouseY - auraY) * lerpFactor;
         
-        aura.style.left = `${auraX}px`;
-        aura.style.top = `${auraY}px`;
+        aura.style.transform = `translate3d(${auraX}px, ${auraY}px, 0) translate(-50%, -50%)`;
         
         requestAnimationFrame(animateCursor);
     }
@@ -102,4 +100,26 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Smooth Scroll Animations for Sections
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Select all main sections and custom reveal classes
+    document.querySelectorAll('section, .contact-main, .resume-hero, .resume-content, .work-grid').forEach(el => {
+        el.classList.add('pre-reveal');
+        observer.observe(el);
+    });
 });

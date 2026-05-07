@@ -111,14 +111,15 @@
 .hero-right {
     position: relative;
     z-index: 10;
-    max-width: 50%; /* Give it more width to breathe */
+    max-width: 55%; /* Give it more width to breathe */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 64px; /* Pull the image left to create right-side breathing room */
 }
 .hero-right img {
-    max-height: 680px; /* Increase the height significantly */
+    max-height: 650px;
+    aspect-ratio: 1 / 1;
     max-width: 100%;
     object-fit: cover;
     border: 3px solid var(--color-text-black);

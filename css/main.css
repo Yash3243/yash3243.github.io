@@ -398,3 +398,18 @@ footer {
         padding: 5px 10px;
     }
 }
+
+/* ==========================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================== */
+.pre-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.pre-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
