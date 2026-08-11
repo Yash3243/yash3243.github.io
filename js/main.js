@@ -2,53 +2,95 @@ document.addEventListener('DOMContentLoaded', () => {
     const dot = document.getElementById('cursor-dot');
     const aura = document.getElementById('cursor-aura');
     
+    if (dot) {
+        dot.style.display = 'block'; // Show dot for click precision
+        dot.style.backgroundColor = 'var(--color-accent-pink)';
+    }
+
+    // Inject avatar container dynamically
+    let avatar = null;
+    if (aura) {
+        avatar = document.createElement('div');
+        avatar.className = 'cursor-avatar';
+        aura.appendChild(avatar);
+    }
+    
     let mouseX = 0;
     let mouseY = 0;
     let auraX = 0;
     let auraY = 0;
     
-    // Lerp factor (0 to 1). Lower = more inertia/lag.
-    const lerpFactor = 0.15;
+    // Lerp factor (0 to 1). Lower = more inertia/lag/smoothness.
+    const lerpFactor = 0.10;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        
-        // Dot follows instantly with transform for smooth performance
-        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        if (dot) {
+            dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        }
     });
 
     // Animation loop for Aura (Inertia effect)
     function animateCursor() {
-        // Linear Interpolation: Current + (Target - Current) * Factor
         auraX += (mouseX - auraX) * lerpFactor;
         auraY += (mouseY - auraY) * lerpFactor;
         
-        aura.style.transform = `translate3d(${auraX}px, ${auraY}px, 0) translate(-50%, -50%)`;
+        if (aura) {
+            aura.style.transform = `translate3d(${auraX}px, ${auraY}px, 0) translate(-50%, -50%)`;
+        }
         
         requestAnimationFrame(animateCursor);
     }
     
     animateCursor();
 
-    // Hover Scaling logic
-    const interactables = document.querySelectorAll('a, button, .peek-card, .ig-card, .view-link');
+    // Hover Scaling and tilting logic
+    const interactables = document.querySelectorAll('a, button, .peek-card, .ig-card, .view-link, .brand-box, .ip, .tk, .qf, .stat');
     
     interactables.forEach(item => {
         item.addEventListener('mouseenter', () => {
-            document.body.classList.add('cursor-hover');
+            if (avatar) {
+                gsap.to(avatar, {
+                    scale: 1.25,
+                    rotation: 12, // Playful head-tilt
+                    duration: 0.25,
+                    ease: "power2.out"
+                });
+            }
         });
         item.addEventListener('mouseleave', () => {
-            document.body.classList.remove('cursor-hover');
+            if (avatar) {
+                gsap.to(avatar, {
+                    scale: 1.0,
+                    rotation: 0,
+                    duration: 0.25,
+                    ease: "power2.out"
+                });
+            }
         });
     });
 
-    // Click Animation
+    // Click Squash & Stretch
     document.addEventListener('mousedown', () => {
-        document.body.classList.add('cursor-click');
+        if (avatar) {
+            gsap.to(avatar, {
+                scaleY: 0.8,
+                scaleX: 1.2,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+        }
     });
     document.addEventListener('mouseup', () => {
-        document.body.classList.remove('cursor-click');
+        if (avatar) {
+            gsap.to(avatar, {
+                scaleY: 1.0,
+                scaleX: 1.0,
+                duration: 0.25,
+                ease: "back.out(2)"
+            });
+        }
     });
 
     // Brand "Sticker" Interactivity
@@ -117,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
     
-    // Select all main sections and custom reveal classes
-    document.querySelectorAll('section, .contact-main, .resume-hero, .resume-content, .work-grid').forEach(el => {
+    // Select all main sections and custom reveal classes (excluding GrowthSchool sections to prevent animation conflicts)
+    document.querySelectorAll('section:not(.growthschool-internship-details section), .contact-main, .resume-hero, .resume-content, .work-grid').forEach(el => {
         el.classList.add('pre-reveal');
         observer.observe(el);
     });

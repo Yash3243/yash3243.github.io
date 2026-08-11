@@ -1,0 +1,141 @@
+/* ==========================================================================
+   POLISH.CSS — Global enhancements & micro-interactions
+   ========================================================================== */
+
+/* 1. LENIS SMOOTH SCROLL SUPPORT */
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* 2. CUSTOM CURSOR (Desktop only) */
+#polish-cursor {
+    width: 48px;
+    height: 72px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: normal;
+    will-change: transform;
+}
+
+#polish-cursor .cursor-avatar {
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/images/custom-cursor.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    will-change: transform;
+    animation: cursorBobbing 1.6s infinite ease-in-out;
+    transform-origin: bottom center;
+}
+
+@keyframes cursorBobbing {
+    0%, 100% {
+        transform: translateY(0) scaleY(1);
+    }
+    50% {
+        transform: translateY(-6px) scaleY(1.04);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #polish-cursor {
+        display: none !important;
+    }
+}
+
+/* Hide original site cursor if present */
+#cursor-dot, #cursor-aura {
+    display: none !important;
+}
+
+/* 3. CINEMATIC GRAIN OVERLAY */
+.polish-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    will-change: transform;
+}
+
+/* Hide original noise overlay if present */
+.noise-overlay {
+    display: none !important;
+}
+
+/* 4. PERFORMANCE & TRANSITION PREPARATION */
+.pre-reveal {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* SplitType parent overflow helper to prevent cut-off characters */
+.line-wrapper {
+    overflow: hidden;
+    display: block;
+}
+
+/* 3D Tilt container setup */
+.hero-right {
+    perspective: 1000px;
+}
+.hero-right img {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+
+/* Barba Page Transitions */
+.barba-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-bg-warm, #FAFAF5);
+    z-index: 99999;
+    pointer-events: none;
+    opacity: 0;
+    will-change: opacity;
+}
+
+/* Accessibility: Respect Reduced Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-delay: 0s !important;
+        animation-duration: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        scroll-behavior: auto !important;
+    }
+    #polish-cursor {
+        display: none !important;
+    }
+    .pre-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

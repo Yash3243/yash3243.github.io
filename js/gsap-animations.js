@@ -22,9 +22,9 @@ function initScrollReveals() {
                     start: 'top 85%',
                     toggleActions: 'play none none none'
                 },
-                y: 40,
+                y: 30,
                 opacity: 0,
-                duration: 1,
+                duration: 0.6,
                 ease: 'power3.out'
             });
         });
@@ -36,17 +36,17 @@ function initScrollReveals() {
                     trigger: container,
                     start: 'top 90%'
                 },
-                scale: 0.8,
+                scale: 0.9,
                 opacity: 0,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: 'back.out(1.7)'
+                duration: 0.4,
+                stagger: 0.08,
+                ease: 'back.out(1.5)'
             });
         });
     });
 
     mm.add("(max-width: 768px)", () => {
-        // Mobile Animations - Gentler and slower
+        // Mobile Animations - Gentler and faster
         const revealElements = document.querySelectorAll('.hero-name, .hero-tagline, .hero-buttons, .who-content, .brag-box, .peek-card, .section-title, .work-block, .contact-left, .contact-right');
         revealElements.forEach((el) => {
             gsap.from(el, {
@@ -55,9 +55,9 @@ function initScrollReveals() {
                     start: 'top 90%',
                     toggleActions: 'play none none none'
                 },
-                y: 20,
+                y: 15,
                 opacity: 0,
-                duration: 1.2,
+                duration: 0.7,
                 ease: 'power2.out'
             });
         });
@@ -71,8 +71,8 @@ function initScrollReveals() {
                 },
                 scale: 0.9,
                 opacity: 0,
-                duration: 0.8,
-                stagger: 0.15,
+                duration: 0.5,
+                stagger: 0.1,
                 ease: 'power2.out'
             });
         });
