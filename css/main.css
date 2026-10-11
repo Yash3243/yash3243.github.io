@@ -79,8 +79,8 @@ li {
     pointer-events: none;
     z-index: 10000;
     mix-blend-mode: normal;
-    width: 120px;
-    height: 180px;
+    width: 42px;
+    height: 63px;
     border: none;
     border-radius: 0;
     background: transparent;
@@ -103,7 +103,7 @@ li {
         transform: translateY(0) scaleY(1);
     }
     50% {
-        transform: translateY(-6px) scaleY(1.04);
+        transform: translateY(-3px) scaleY(1.03);
     }
 }
 
@@ -274,7 +274,7 @@ li {
 /* Footer */
 footer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     background-color: var(--color-bg-warm);
     height: 86px;
     align-items: center;

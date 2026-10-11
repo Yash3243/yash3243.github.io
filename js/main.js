@@ -23,12 +23,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lerp factor (0 to 1). Lower = more inertia/lag/smoothness.
     const lerpFactor = 0.10;
 
+    let idleTimeout = null;
+
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         if (dot) {
             dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
         }
+        
+        // Reset idle timer
+        clearTimeout(idleTimeout);
+        
+        // Instant fade-in when mouse moves
+        if (aura && aura.style.opacity !== "1") {
+            gsap.to(aura, { opacity: 1, duration: 0.15, overwrite: "auto" });
+        }
+        
+        // Start new 1.5s idle fade-out timer
+        idleTimeout = setTimeout(() => {
+            if (aura) {
+                gsap.to(aura, { opacity: 0, duration: 0.4, overwrite: "auto" });
+            }
+        }, 1500);
     });
 
     // Animation loop for Aura (Inertia effect)
@@ -52,8 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('mouseenter', () => {
             if (avatar) {
                 gsap.to(avatar, {
-                    scale: 1.25,
-                    rotation: 12, // Playful head-tilt
+                    scale: 1.15,
+                    rotation: 8, // Subtle head-tilt
                     duration: 0.25,
                     ease: "power2.out"
                 });
@@ -75,8 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousedown', () => {
         if (avatar) {
             gsap.to(avatar, {
-                scaleY: 0.8,
-                scaleX: 1.2,
+                scaleY: 0.88,
+                scaleX: 1.1,
                 duration: 0.1,
                 ease: "power2.out"
             });
